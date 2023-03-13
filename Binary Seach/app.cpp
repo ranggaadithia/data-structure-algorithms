@@ -4,8 +4,10 @@ using namespace std;
 int main()
 {
   int arr[] = {1, 3, 5, 7, 9, 11};
+  int target;
   int sizeArray = sizeof(arr) / sizeof(arr[0]);
-  int target = 11;
+  cout << "Masukan Nomor yang ingin dicari : ";
+  cin >> target;
   int left = 0, right = sizeArray - 1;
 
   while (left <= right)
