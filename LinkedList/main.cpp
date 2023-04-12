@@ -9,10 +9,9 @@ int main()
   list1.insertToHead(40);
   list1.insertToHead(50);
   list1.insertToTail(30);
+  list1.insertAfter(1, 60);
 
   cout << endl;
-
-  cout << list1.head->next->value << endl;
 
   list1.printAll();
 }

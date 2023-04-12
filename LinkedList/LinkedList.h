@@ -26,6 +26,7 @@ public:
   void deleteByValue(int);
 
   void printAll();
+  void trackNode();
 
   LinkedList()
   {
