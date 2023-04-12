@@ -17,6 +17,24 @@ void LinkedList::insertToHead(int input)
   }
 }
 
+void LinkedList::insertToTail(int input)
+{
+  Node *newNode = new Node();
+  newNode->value = input;
+  newNode->next = NULL;
+
+  if (head == NULL)
+  {
+    head = newNode;
+    tail = newNode;
+  }
+  else
+  {
+    tail->next = newNode;
+    tail = newNode;
+  }
+}
+
 void LinkedList::printAll()
 {
   Node *tmp = head;
@@ -25,4 +43,5 @@ void LinkedList::printAll()
     cout << tmp->value << ", ";
     tmp = tmp->next;
   }
+  cout << endl;
 }
