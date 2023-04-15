@@ -41,7 +41,7 @@ void LinkedList::insertAfter(int node, int input)
   newNode->value = input;
 
   Node *tmp = head;
-  Node *nodeTmp;
+  Node *nodeTmp = NULL;
   int pos = 1;
   while (tmp != NULL)
   {
