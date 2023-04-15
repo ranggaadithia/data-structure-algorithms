@@ -44,7 +44,7 @@ int Stack::pop()
   return value;
 }
 
-int Stack::peek()
+int Stack::top()
 {
   if (isEmpty())
   {
@@ -54,7 +54,7 @@ int Stack::peek()
   return data[topIndex];
 }
 
-void Stack::display()
+void Stack::printElements()
 {
   if (isEmpty())
   {

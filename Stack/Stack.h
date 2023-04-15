@@ -11,6 +11,6 @@ public:
   bool isFull();
   bool push(int value);
   int pop();
-  int peek();
-  void display();
+  int top();
+  void printElements();
 };
