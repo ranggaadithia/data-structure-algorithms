@@ -1,35 +1,24 @@
-#include "Stack.h"
 #include <iostream>
+#include "Stack.h"
 
 using namespace std;
 
-Stack::Stack(int size)
+Stack::Stack()
 {
-  data = new int[size];
-  this->size = size;
-  topIndex = -1;
+  topNode = NULL;
 }
 
 bool Stack::isEmpty()
 {
-  return topIndex == -1;
+  return topNode == NULL;
 }
 
-bool Stack::isFull()
+void Stack::push(int value)
 {
-  return topIndex == size - 1;
-}
-
-bool Stack::push(int value)
-{
-  if (isFull())
-  {
-    return false;
-  }
-
-  topIndex++;
-  data[topIndex] = value;
-  return true;
+  Node *newNode = new Node();
+  newNode->value = value;
+  newNode->next = topNode;
+  topNode = newNode;
 }
 
 int Stack::pop()
@@ -39,8 +28,10 @@ int Stack::pop()
     return -1;
   }
 
-  int value = data[topIndex];
-  topIndex--;
+  Node *temp = topNode;
+  int value = temp->value;
+  topNode = topNode->next;
+  delete temp;
   return value;
 }
 
@@ -51,19 +42,23 @@ int Stack::top()
     return -1;
   }
 
-  return data[topIndex];
+  return topNode->value;
 }
 
 void Stack::printElements()
 {
   if (isEmpty())
   {
-    cout << "Stack is empty" << endl;
+    cout << "Stack is Empty" << endl;
   }
-  cout << "Stack Elements : ";
-  for (int i = topIndex; i >= 0; i--)
+
+  cout << "Stack Element : ";
+  Node *temp = topNode;
+  while (temp != NULL)
   {
-    cout << data[i] << " ";
+    cout << temp->value << " ";
+    temp = temp->next;
   }
+
   cout << endl;
 }
