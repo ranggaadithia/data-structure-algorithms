@@ -4,14 +4,23 @@ using namespace std;
 
 int main()
 {
-  LinkedList list1;
+  LinkedList myList;
 
-  list1.insertToHead(40);
-  list1.insertToHead(50);
-  list1.insertToTail(30);
-  list1.insertAfter(1, 60);
+  myList.insertToHead(10);
+  myList.insertToHead(20);
+  myList.insertToTail(30);
+  myList.insertAfter(2, 40);
+  myList.insertAfter(3, 50);
 
-  cout << endl;
+  cout << "Linked All : " << endl;
+  myList.printAll();
 
-  list1.printAll();
+  myList.deleteFromHead();
+  myList.printAll();
+
+  myList.deleteFromTail();
+  myList.printAll();
+
+  myList.deleteByValue(40);
+  myList.printAll();
 }
