@@ -18,7 +18,10 @@ int main()
   bin.insert(25);
   bin.insert(30);
 
-  bin.inOrder();
+  bin.postOrder();
+  bin.findMin();
+  bin.findMax();
+  bin.search(20);
 
   return 0;
 }

@@ -27,13 +27,17 @@ public:
 
   Node *insertRecursive(Node *, int);
 
-  void preOrder(int);
+  void preOrder();
+  void PreOrderRecursive(Node *);
+
   void inOrder();
   void inOrderRecursive(Node *);
 
-  void postOrder(int);
+  void postOrder();
+  void postOrderRecursive(Node *);
 
-  Node *serach(int);
+  Node *search(int);
+  Node *searchNode(Node *, int);
 
   Node *findMin();
   Node *findMax();
